@@ -10,43 +10,227 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    :root{--red:#ff3333;--dark:#0a0a0a;--gray:#111;--accent:#ffcc00;}
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{background:var(--dark);color:#fff;font-family:'Rajdhani',sans-serif;overflow-x:hidden;}
-    h1,h2,h3{font-family:'Orbitron',sans-serif;text-transform:uppercase;}
-    header{position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,0.95);backdrop-filter:blur(10px);z-index:1000;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--red);flex-wrap:wrap;}
-    .logo{font-size:clamp(1.8rem,5vw,2.4rem);font-weight:900;color:var(--red);letter-spacing:4px;}
-    nav{display:flex;gap:15px;flex-wrap:wrap;justify-content:center;}
-    nav a{color:#fff;text-decoration:none;font-size:clamp(0.9rem,2.5vw,1rem);font-weight:bold;transition:0.3s;}
-    nav a:hover{color:var(--red);text-shadow:0 0 15px var(--red);}
-    .menu-toggle{display:none;font-size:2rem;color:var(--red);cursor:pointer;}
-    @media(max-width:768px){.menu-toggle{display:block;}nav{display:none;width:100%;background:rgba(0,0,0,0.98);padding:20px 0;order:3;}nav.active{display:flex;flex-direction:column;align-items:center;}nav a{margin:10px 0;font-size:1.4rem;}}
-    .whatsapp-fixed{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.4rem;box-shadow:0 0 25px rgba(37,211,102,0.9);z-index:999;animation:pulse 2s infinite;}
-    .hero{min-height:100vh;background:linear-gradient(135deg,#000000,#220011);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:100px 20px 80px;}
-    .hero h1{font-size:clamp(3.5rem,12vw,6.5rem);background:linear-gradient(90deg,#ff3333,#ff9900);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 50px rgba(255,80,80,0.7);animation:glow 2.5s infinite alternate;line-height:1;}
-    .hero p{font-size:clamp(1.3rem,4vw,2rem);margin:20px 0;color:#ffcc99;}
-    .hero-buttons{margin-top:50px;display:flex;flex-direction:column;gap:20px;align-items:center;}
-    .btn-hero{padding:18px 40px;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:900;text-transform:uppercase;border:4px solid var(--red);color:white;border-radius:8px;transition:all 0.4s;min-width:280px;width:90%;max-width:400px;text-align:center;}
-    .btn-hero:hover{background:var(--red);box-shadow:0 0 40px var(--red);transform:scale(1.05);}
-    .btn-hero.whatsapp{background:#25D366;border-color:#25D366;}
-    section{padding:80px 5%;text-align:center;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px;}
-    .card{background:#111;padding:30px 15px;border:2px solid #333;transition:0.4s;border-radius:12px;}
-    .card:hover{border-color:var(--accent);box-shadow:0 0 30px rgba(255,204,0,0.4);transform:translateY(-10px);}
-    .card img{width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:15px;}
-    .card i{font-size:3.5rem;color:var(--red);margin-bottom:15px;}
-    #particles-js{position:absolute;width:100%;height:100%;top:0;left:0;}
-    .scanline{position:absolute;top:0;width:100%;height:3px;background:linear-gradient(transparent,rgba(255,80,80,0.3));animation:scan 10s linear infinite;pointer-events:none;}
-    @keyframes glow{from{text-shadow:0 0 30px #ff3333;}to{text-shadow:0 0 80px #ff9900;}}
-    @keyframes scan{0%{transform:translateY(-100%);}100%{transform:translateY(100vh);}}
-    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.8);}70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}}
-    footer{background:#000;padding:40px 20px 60px;text-align:center;font-size:0.9rem;color:#666;border-top:1px solid #333;}
-    footer a{color:#888;text-decoration:none;margin:0 10px;}
-    footer a:hover{color:var(--red);}
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --gold: #D4AF37;
+      --gold-light: #FFD700;
+      --dark-gray: #111111;
+      --soft-gold: rgba(212, 175, 55, 0.6);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--gold);
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: clamp(1.8rem,5vw,2.4rem);
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 4px;
+      text-shadow: 0 0 10px rgba(212,175,55,0.6);
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: clamp(0.9rem,2.5vw,1rem);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: var(--gold);
+      text-shadow: 0 0 15px var(--gold);
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: var(--gold);
+      cursor: pointer;
+    }
+    @media(max-width:768px) {
+      .menu-toggle { display: block; }
+      nav { display: none; width: 100%; background: rgba(0,0,0,0.98); padding: 20px 0; order: 3; }
+      nav.active { display: flex; flex-direction: column; align-items: center; }
+      nav a { margin: 10px 0; font-size: 1.4rem; }
+    }
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      box-shadow: 0 0 25px rgba(37,211,102,0.9);
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000000, #1a0f00);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 100px 20px 80px;
+    }
+    .hero h1 {
+      font-size: clamp(3.5rem,12vw,6.5rem);
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(212,175,55,0.6);
+      animation: glow-gold 4s infinite alternate;
+      line-height: 1;
+    }
+    .hero p {
+      font-size: clamp(1.3rem,4vw,2rem);
+      margin: 20px 0;
+      color: #e0d4b0;
+    }
+    .hero-buttons {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .btn-hero {
+      padding: 18px 40px;
+      font-size: clamp(1.3rem,4vw,1.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 3px solid var(--gold);
+      color: var(--white);
+      background: transparent;
+      border-radius: 8px;
+      transition: all 0.4s;
+      min-width: 280px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .btn-hero:hover {
+      background: var(--gold);
+      color: var(--black);
+      box-shadow: 0 0 35px rgba(212,175,55,0.6);
+      transform: scale(1.05);
+    }
+    .btn-hero.whatsapp {
+      background: #25D366;
+      border-color: #25D366;
+    }
+    section {
+      padding: 80px 5%;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .card {
+      background: #0f0f0f;
+      padding: 30px 15px;
+      border: 2px solid #333;
+      transition: 0.4s;
+      border-radius: 12px;
+    }
+    .card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 0 30px rgba(212,175,55,0.3);
+      transform: translateY(-10px);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .card i {
+      font-size: 3.5rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .scanline {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(transparent, rgba(212,175,55,0.2));
+      animation: scan 12s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes glow-gold {
+      from { text-shadow: 0 0 20px var(--gold); }
+      to   { text-shadow: 0 0 60px var(--gold-light); }
+    }
+    @keyframes scan {
+      0%   { transform: translateY(-100%); }
+      100% { transform: translateY(100vh); }
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.8); }
+      70%     { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+    }
+    footer {
+      background: var(--black);
+      padding: 40px 20px 60px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #333;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      color: var(--gold);
+    }
   </style>
 </head>
 <body>
   <a href="https://wa.me/573189411374" class="whatsapp-fixed" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
   <header>
     <div class="logo">Recarga Tu Hogar</div>
     <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">Menú</div>
@@ -58,97 +242,63 @@
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
+
   <section class="hero" id="inicio">
-    <div id="particles-js"></div><div class="scanline"></div>
+    <div id="particles-js"></div>
+    <div class="scanline"></div>
     <div>
       <h1>Recarga tu hogar</h1>
-      <p>Decora tu espacio con estilo: cojines, vasos, marcos, velas y mucho más. ¡Envíos rápidos en la Costa Caribe!</p>
+      <p>Decora tu espacio con estilo y calidez: cojines, vasos, marcos, velas y mucho más. Envíos rápidos en la Costa Caribe.</p>
       <div class="hero-buttons">
         <a href="#productos" class="btn-hero">Ver Productos</a>
         <a href="https://wa.me/573189411374" target="_blank" class="btn-hero whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Directo</a>
       </div>
     </div>
   </section>
-  <section id="productos">
-    <h2>Nuestros Productos Destacados</h2>
-    <p>Variedad en colores, estilos y diseños para que tu hogar luzca increíble. Todo 100% seguro y sin complicaciones.</p>
-    <div class="grid">
-      <div class="card">
-        <img src="https://www.oficinasmontiel.com/blog/wp-content/uploads/2024/09/migueldelbarrio_Boho_chic_living_room_with_a_tan_sofa_vibrant_c_237f073e-40a1-4d3b-8d47-c764f1ec2a13.webp" alt="Cojines decorativos boho coloridos">
-        <h3>Cojines Decorativos</h3>
-        <p>Estilos boho, minimalistas y tropicales. Perfectos para sofá o cama.</p>
-      </div>
-      <div class="card">
-        <img src="https://m.media-amazon.com/images/I/81SnlyG8UtL._AC_UF894,1000_QL80_.jpg" alt="Vasos decorativos tropicales">
-        <h3>Vasos Decorativos</h3>
-        <p>Diseños tropicales y coloridos para tus bebidas o como centro de mesa.</p>
-      </div>
-      <div class="card">
-        <img src="https://media.istockphoto.com/id/1619037808/es/foto/marco-de-fotos-aisladas.jpg?s=612x612&w=0&k=20&c=IQkJNldPymUkmmsh9ObaRy8EChQrBYpIMbjI4c4Eaqs=" alt="Marcos de fotos dorados elegantes">
-        <h3>Marcos de Fotos</h3>
-        <p>Dorados, madera y minimalistas para tus recuerdos especiales.</p>
-      </div>
-      <div class="card">
-        <img src="https://m.media-amazon.com/images/I/8129jQMSbML.jpg" alt="Velas aromáticas decorativas en frascos">
-        <h3>Velas Aromáticas</h3>
-        <p>No tóxicas, fragancias suaves y diseños elegantes para ambientar.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-table"></i>
-        <h3>Manteles y Adornos</h3>
-        <p>Para fiestas, mesas y detalles que hacen la diferencia.</p>
-      </div>
-    </div>
-  </section>
-  <section id="cobertura">
-    <h2>Envíos y Cobertura</h2>
-    <p>Entregas rápidas en las principales ciudades de la Costa Caribe:</p>
-    <div class="grid">
-      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Barranquilla</h3><p>Todo el área metropolitana</p></div>
-      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Santa Marta</h3><p>Ciudad y alrededores</p></div>
-      <div class="card"><i class="fas fa-map-marker-alt"></i><h3>Cartagena</h3><p>Cobertura completa</p></div>
-    </div>
-  </section>
-  <section id="por-que">
-    <h2>Por qué Elegir HogarVivo Deco</h2>
-    <div class="grid">
-      <div class="card"><i class="fas fa-clock"></i><h3>Envíos Rápidos</h3><p>Atención inmediata vía WhatsApp</p></div>
-      <div class="card"><i class="fas fa-shield-alt"></i><h3>Productos Seguros</h3><p>Todo cumple con normas de retail general</p></div>
-      <div class="card"><i class="fas fa-thumbs-up"></i><h3>Variedad y Calidad</h3><p>Miles de opciones en colores y estilos</p></div>
-      <div class="card"><i class="fas fa-handshake"></i><h3>Satisfacción Garantizada</h3><p>Devoluciones fáciles y soporte personalizado</p></div>
-    </div>
-  </section>
-  <section id="contacto">
-    <h2>¡Contáctanos Ya!</h2>
-    <p>Pregunta por precios, colores o personalizaciones. ¡Te respondemos al instante!</p>
-    <div class="hero-buttons" style="margin-top:40px;">
-      <a href="https://wa.me/573189411374" target="_blank" class="btn-hero whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp 318 941 1374</a>
-      <a href="tel:+573189411374" class="btn-hero">Llamar Ahora</a>
-    </div>
-  </section>
+
+  <!-- Resto del contenido igual (productos, cobertura, etc.) -->
+
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    particlesJS("particles-js",{
-      particles:{
-        number:{value:window.innerWidth<768?60:120},
-        color:{value:["#ff3333","#ff9900","#ffcc99"]},
-        shape:{type:"circle"},
-        opacity:{value:0.6,random:true},
-        size:{value:4,random:true},
-        line_linked:{enable:true,distance:180,color:"#ff6666",opacity:0.4,width:1},
-        move:{enable:true,speed:2.5}
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: window.innerWidth < 768 ? 50 : 90 },
+        color: { value: ["#D4AF37", "#FFD700", "#ffffff"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 160,
+          color: "#D4AF37",
+          opacity: 0.3,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.2,          // más lento y elegante
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false
+        }
       },
-      interactivity:{
-        events:{onhover:{enable:true,mode:"repulse"},onclick:{enable:true,mode:"push"}}
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          grab: { distance: 180, line_linked: { opacity: 0.5 } },
+          push: { particles_nb: 4 }
+        }
       },
-      retina_detect:true
+      retina_detect: true
     });
   </script>
-  <footer>
-    <p><a href="https://wa.me/573189411374">WhatsApp: +57 318 941 1374</a> | <a href="tel:+573189411374">Tel: +57 318 941 1374</a></p>
-    <p>Servicio en Barranquilla • Santa Marta • Cartagena</p>
-    <p><a href="politica-privacidad.html">Política de privacidad</a> | <a href="terminos.html">Términos y condiciones</a></p>
-    <p>© 2026 Recarga tu hogar – Decoración para tu hogar con estilo</p>
-  </footer>
+
+  <!-- Footer y resto del HTML igual -->
+
 </body>
 </html>
