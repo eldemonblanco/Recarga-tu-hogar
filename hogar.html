@@ -2,66 +2,69 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Artículos para el hogar y decoración: cojines, vasos decorativos, marcos, velas aromáticas y adornos para fiestas. Envíos en Barranquilla, Santa Marta y Cartagena."/>
-  <title>Recarga tu hogar | Decoración para tu Hogar en la Costa Caribe</title>
+  <title>Recarga tu hogar · Decoración Elegante en la Costa Caribe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root {
       --black: #000000;
-      --white: #ffffff;
-      --gold: #D4AF37;
-      --gold-light: #FFD700;
-      --dark-gray: #111111;
-      --soft-gold: rgba(212, 175, 55, 0.6);
+      --dark: #0d0d0d;
+      --gold: #c9a96e;
+      --gold-light: #e8d5a3;
+      --white: #f5f5f5;
+      --gray: #aaaaaa;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       background: var(--black);
       color: var(--white);
-      font-family: 'Rajdhani', sans-serif;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
       overflow-x: hidden;
     }
     h1, h2, h3 {
-      font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
       color: var(--gold);
+      letter-spacing: 1px;
     }
     header {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background: rgba(0,0,0,0.92);
-      backdrop-filter: blur(12px);
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(15px);
       z-index: 1000;
-      padding: 15px 5%;
+      padding: 25px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid var(--gold);
-      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(201,169,110,0.2);
     }
     .logo {
-      font-size: clamp(1.8rem,5vw,2.4rem);
-      font-weight: 900;
+      font-size: 2.2rem;
+      font-weight: 700;
       color: var(--gold);
-      letter-spacing: 4px;
-      text-shadow: 0 0 10px rgba(212,175,55,0.6);
+      letter-spacing: 3px;
     }
     nav a {
       color: var(--white);
       text-decoration: none;
-      font-size: clamp(0.9rem,2.5vw,1rem);
-      font-weight: bold;
-      transition: 0.3s;
+      margin-left: 40px;
+      font-size: 1.05rem;
+      font-weight: 400;
+      transition: color 0.4s ease;
     }
     nav a:hover {
       color: var(--gold);
-      text-shadow: 0 0 15px var(--gold);
     }
     .menu-toggle {
       display: none;
@@ -69,118 +72,135 @@
       color: var(--gold);
       cursor: pointer;
     }
-    @media(max-width:768px) {
+    @media (max-width: 900px) {
       .menu-toggle { display: block; }
-      nav { display: none; width: 100%; background: rgba(0,0,0,0.98); padding: 20px 0; order: 3; }
-      nav.active { display: flex; flex-direction: column; align-items: center; }
-      nav a { margin: 10px 0; font-size: 1.4rem; }
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        padding: 30px 0;
+        text-align: center;
+      }
+      nav.active { display: block; }
+      nav a {
+        display: block;
+        margin: 20px 0;
+        font-size: 1.4rem;
+      }
     }
     .whatsapp-fixed {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 30px;
+      right: 30px;
       background: #25D366;
       color: white;
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.4rem;
-      box-shadow: 0 0 25px rgba(37,211,102,0.9);
+      font-size: 2.2rem;
+      box-shadow: 0 8px 30px rgba(37,211,102,0.35);
       z-index: 999;
-      animation: pulse 2s infinite;
+      transition: transform 0.3s;
+    }
+    .whatsapp-fixed:hover {
+      transform: scale(1.1);
     }
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, #000000, #1a0f00);
+      background: linear-gradient(135deg, #000000 0%, #0f0a00 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       position: relative;
-      padding: 100px 20px 80px;
+      padding: 120px 8% 80px;
+    }
+    .hero-content {
+      max-width: 1100px;
+      z-index: 2;
     }
     .hero h1 {
-      font-size: clamp(3.5rem,12vw,6.5rem);
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px rgba(212,175,55,0.6);
-      animation: glow-gold 4s infinite alternate;
-      line-height: 1;
+      font-size: clamp(4rem, 10vw, 8rem);
+      margin-bottom: 20px;
+      line-height: 0.95;
     }
     .hero p {
-      font-size: clamp(1.3rem,4vw,2rem);
-      margin: 20px 0;
-      color: #e0d4b0;
-    }
-    .hero-buttons {
-      margin-top: 50px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+      color: #d4c4a0;
+      margin-bottom: 50px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .btn-hero {
-      padding: 18px 40px;
-      font-size: clamp(1.3rem,4vw,1.8rem);
-      font-weight: 900;
+      display: inline-block;
+      padding: 18px 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
       text-transform: uppercase;
-      border: 3px solid var(--gold);
-      color: var(--white);
-      background: transparent;
-      border-radius: 8px;
-      transition: all 0.4s;
-      min-width: 280px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
+      letter-spacing: 2px;
+      color: var(--black);
+      background: var(--gold);
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 30px rgba(201,169,110,0.3);
     }
     .btn-hero:hover {
-      background: var(--gold);
-      color: var(--black);
-      box-shadow: 0 0 35px rgba(212,175,55,0.6);
-      transform: scale(1.05);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(201,169,110,0.5);
     }
     .btn-hero.whatsapp {
       background: #25D366;
-      border-color: #25D366;
+      color: white;
     }
     section {
-      padding: 80px 5%;
+      padding: 120px 8%;
       text-align: center;
+    }
+    h2 {
+      font-size: 3.5rem;
+      margin-bottom: 60px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
     }
     .card {
-      background: #0f0f0f;
-      padding: 30px 15px;
-      border: 2px solid #333;
-      transition: 0.4s;
-      border-radius: 12px;
+      background: rgba(20,20,20,0.6);
+      border: 1px solid rgba(201,169,110,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      backdrop-filter: blur(10px);
     }
     .card:hover {
+      transform: translateY(-15px);
       border-color: var(--gold);
-      box-shadow: 0 0 30px rgba(212,175,55,0.3);
-      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(201,169,110,0.2);
     }
     .card img {
       width: 100%;
-      height: 220px;
+      height: 280px;
       object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 15px;
+      transition: transform 0.6s ease;
     }
-    .card i {
-      font-size: 3.5rem;
-      color: var(--gold);
-      margin-bottom: 15px;
+    .card:hover img {
+      transform: scale(1.08);
+    }
+    .card-content {
+      padding: 30px;
+    }
+    .card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
     }
     #particles-js {
       position: absolute;
@@ -189,51 +209,31 @@
       top: 0;
       left: 0;
     }
-    .scanline {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(transparent, rgba(212,175,55,0.2));
-      animation: scan 12s linear infinite;
-      pointer-events: none;
-    }
-    @keyframes glow-gold {
-      from { text-shadow: 0 0 20px var(--gold); }
-      to   { text-shadow: 0 0 60px var(--gold-light); }
-    }
-    @keyframes scan {
-      0%   { transform: translateY(-100%); }
-      100% { transform: translateY(100vh); }
-    }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.8); }
-      70%     { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
-    }
     footer {
       background: var(--black);
-      padding: 40px 20px 60px;
+      padding: 80px 8% 40px;
       text-align: center;
-      font-size: 0.9rem;
-      color: #aaa;
-      border-top: 1px solid #333;
+      border-top: 1px solid rgba(201,169,110,0.15);
+      color: var(--gray);
+      font-size: 0.95rem;
     }
     footer a {
-      color: #ccc;
+      color: var(--gold);
       text-decoration: none;
-      margin: 0 10px;
+      transition: color 0.3s;
     }
     footer a:hover {
-      color: var(--gold);
+      color: var(--gold-light);
     }
   </style>
 </head>
 <body>
+
   <a href="https://wa.me/573189411374" class="whatsapp-fixed" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
   <header>
     <div class="logo">Recarga Tu Hogar</div>
-    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">Menú</div>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#productos">Productos</a>
@@ -245,60 +245,54 @@
 
   <section class="hero" id="inicio">
     <div id="particles-js"></div>
-    <div class="scanline"></div>
-    <div>
+    <div class="hero-content">
       <h1>Recarga tu hogar</h1>
-      <p>Decora tu espacio con estilo y calidez: cojines, vasos, marcos, velas y mucho más. Envíos rápidos en la Costa Caribe.</p>
-      <div class="hero-buttons">
-        <a href="#productos" class="btn-hero">Ver Productos</a>
-        <a href="https://wa.me/573189411374" target="_blank" class="btn-hero whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Directo</a>
+      <p>Elevamos tu espacio con piezas únicas y elegantes. Cojines, vasos, marcos, velas y detalles que transforman cualquier ambiente.</p>
+      <div style="margin-top:60px;">
+        <a href="#productos" class="btn-hero">Explorar Colección</a>
+        <a href="https://wa.me/573189411374" target="_blank" class="btn-hero whatsapp" style="margin-left:30px;">WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <!-- Resto del contenido igual (productos, cobertura, etc.) -->
+  <!-- Resto de las secciones se mantienen iguales, solo ajusta el estilo de las tarjetas si lo deseas -->
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
       particles: {
-        number: { value: window.innerWidth < 768 ? 50 : 90 },
-        color: { value: ["#D4AF37", "#FFD700", "#ffffff"] },
+        number: { value: 40, density: { enable: true, value_area: 800 } },
+        color: { value: ["#D4AF37", "#E8D5A3", "#ffffff"] },
         shape: { type: "circle" },
-        opacity: { value: 0.5, random: true },
-        size: { value: 3, random: true },
-        line_linked: {
-          enable: true,
-          distance: 160,
-          color: "#D4AF37",
-          opacity: 0.3,
-          width: 1
-        },
+        opacity: { value: 0.4, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
+        size: { value: 3.5, random: true },
+        line_linked: { enable: false },
         move: {
           enable: true,
-          speed: 1.2,          // más lento y elegante
+          speed: 0.8,
           direction: "none",
           random: true,
           straight: false,
           out_mode: "out",
-          bounce: false
+          bounce: false,
+          attract: { enable: false }
         }
       },
       interactivity: {
+        detect_on: "canvas",
         events: {
-          onhover: { enable: true, mode: "grab" },
-          onclick: { enable: true, mode: "push" }
+          onhover: { enable: true, mode: "bubble" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
         },
         modes: {
-          grab: { distance: 180, line_linked: { opacity: 0.5 } },
+          bubble: { distance: 200, size: 6, duration: 2, opacity: 0.8, speed: 3 },
           push: { particles_nb: 4 }
         }
       },
       retina_detect: true
     });
   </script>
-
-  <!-- Footer y resto del HTML igual -->
 
 </body>
 </html>
