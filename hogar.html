@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Artículos para el hogar y decoración: cojines, vasos decorativos, marcos, velas aromáticas y adornos para fiestas. Envíos en Barranquilla, Santa Marta y Cartagena."/>
-  <title>Recarga tu hogar · Decoración Elegante en la Costa Caribe</title>
+  <title>Recarga tu Hogar · Decoración Elegante</title>
+  <meta name="description" content="Cojines, vasos decorativos, marcos, velas y detalles únicos para transformar tu hogar. Envíos en Barranquilla, Santa Marta y Cartagena."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,224 +12,170 @@
   <style>
     :root {
       --black: #000000;
-      --dark: #0d0d0d;
+      --dark: #0a0a0a;
       --gold: #c9a96e;
       --gold-light: #e8d5a3;
-      --white: #f5f5f5;
-      --gray: #aaaaaa;
+      --white: #f8f8f8;
+      --gray: #bbbbbb;
     }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       background: var(--black);
       color: var(--white);
       font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-      color: var(--gold);
-      letter-spacing: 1px;
+      line-height: 1.7;
     }
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(15px);
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(16px);
       z-index: 1000;
-      padding: 25px 8%;
+      padding: 28px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(201,169,110,0.2);
+      border-bottom: 1px solid rgba(201,169,110,0.15);
     }
     .logo {
-      font-size: 2.2rem;
-      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
       color: var(--gold);
-      letter-spacing: 3px;
+      letter-spacing: 2px;
     }
     nav a {
       color: var(--white);
       text-decoration: none;
-      margin-left: 40px;
+      margin-left: 45px;
+      font-weight: 500;
       font-size: 1.05rem;
-      font-weight: 400;
       transition: color 0.4s ease;
     }
-    nav a:hover {
-      color: var(--gold);
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      color: var(--gold);
-      cursor: pointer;
-    }
+    nav a:hover { color: var(--gold); }
+    .menu-toggle { display:none; font-size:2.2rem; color:var(--gold); cursor:pointer; }
     @media (max-width: 900px) {
-      .menu-toggle { display: block; }
+      .menu-toggle { display:block; }
       nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--dark);
-        padding: 30px 0;
-        text-align: center;
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:var(--dark);
+        padding:40px 0;
+        text-align:center;
       }
-      nav.active { display: block; }
-      nav a {
-        display: block;
-        margin: 20px 0;
-        font-size: 1.4rem;
-      }
-    }
-    .whatsapp-fixed {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #25D366;
-      color: white;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
-      box-shadow: 0 8px 30px rgba(37,211,102,0.35);
-      z-index: 999;
-      transition: transform 0.3s;
-    }
-    .whatsapp-fixed:hover {
-      transform: scale(1.1);
+      nav.active { display:block; }
+      nav a { display:block; margin:25px 0; font-size:1.5rem; }
     }
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, #000000 0%, #0f0a00 100%);
+      background: linear-gradient(135deg, #000000 0%, #120c00 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 140px 6% 80px;
       position: relative;
-      padding: 120px 8% 80px;
     }
     .hero-content {
       max-width: 1100px;
       z-index: 2;
     }
     .hero h1 {
-      font-size: clamp(4rem, 10vw, 8rem);
-      margin-bottom: 20px;
-      line-height: 0.95;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4.5rem, 11vw, 9rem);
+      margin-bottom: 24px;
+      line-height: 0.92;
+      color: var(--gold);
     }
     .hero p {
-      font-size: clamp(1.4rem, 4vw, 1.8rem);
-      color: #d4c4a0;
-      margin-bottom: 50px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      color: #d9c9a5;
+      max-width: 720px;
+      margin: 0 auto 60px;
+      font-weight: 300;
     }
-    .btn-hero {
+    .btn-primary {
       display: inline-block;
       padding: 18px 50px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--black);
       background: var(--gold);
+      color: var(--black);
       text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1.5px;
       border-radius: 50px;
       transition: all 0.4s ease;
-      box-shadow: 0 8px 30px rgba(201,169,110,0.3);
+      box-shadow: 0 8px 30px rgba(201,169,110,0.25);
     }
-    .btn-hero:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(201,169,110,0.5);
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(201,169,110,0.45);
     }
-    .btn-hero.whatsapp {
+    .btn-whatsapp {
       background: #25D366;
       color: white;
+      margin-left: 25px;
     }
-    section {
-      padding: 120px 8%;
-      text-align: center;
-    }
+    section { padding: 140px 6%; text-align: center; }
     h2 {
-      font-size: 3.5rem;
-      margin-bottom: 60px;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 70px;
+      color: var(--gold);
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 50px;
     }
     .card {
-      background: rgba(20,20,20,0.6);
-      border: 1px solid rgba(201,169,110,0.15);
-      border-radius: 16px;
+      background: rgba(20,20,20,0.5);
+      border: 1px solid rgba(201,169,110,0.12);
+      border-radius: 20px;
       overflow: hidden;
       transition: all 0.5s ease;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
     .card:hover {
-      transform: translateY(-15px);
+      transform: translateY(-20px);
       border-color: var(--gold);
-      box-shadow: 0 20px 60px rgba(201,169,110,0.2);
+      box-shadow: 0 25px 60px rgba(201,169,110,0.18);
     }
     .card img {
       width: 100%;
-      height: 280px;
+      height: 300px;
       object-fit: cover;
-      transition: transform 0.6s ease;
+      transition: transform 0.7s ease;
     }
-    .card:hover img {
-      transform: scale(1.08);
+    .card:hover img { transform: scale(1.07); }
+    .card-content { padding: 35px; }
+    .card h3 { font-size: 2rem; margin-bottom: 16px; }
+    footer {
+      background: var(--black);
+      padding: 100px 6% 60px;
+      text-align: center;
+      border-top: 1px solid rgba(201,169,110,0.12);
+      color: var(--gray);
+      font-size: 0.95rem;
     }
-    .card-content {
-      padding: 30px;
-    }
-    .card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { color: var(--gold-light); }
     #particles-js {
       position: absolute;
       width: 100%;
       height: 100%;
-      top: 0;
-      left: 0;
-    }
-    footer {
-      background: var(--black);
-      padding: 80px 8% 40px;
-      text-align: center;
-      border-top: 1px solid rgba(201,169,110,0.15);
-      color: var(--gray);
-      font-size: 0.95rem;
-    }
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    footer a:hover {
-      color: var(--gold-light);
+      top: 0; left: 0;
     }
   </style>
 </head>
 <body>
 
-  <a href="https://wa.me/573189411374" class="whatsapp-fixed" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://wa.me/573189411374" class="whatsapp-fixed" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <header>
     <div class="logo">Recarga Tu Hogar</div>
@@ -237,58 +183,48 @@
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#productos">Productos</a>
-      <a href="#cobertura">Envíos</a>
-      <a href="#por-que">Por qué Nosotros</a>
+      <a href="#envios">Envíos</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <section class="hero" id="inicio">
+  <section class="hero">
     <div id="particles-js"></div>
     <div class="hero-content">
-      <h1>Recarga tu hogar</h1>
-      <p>Elevamos tu espacio con piezas únicas y elegantes. Cojines, vasos, marcos, velas y detalles que transforman cualquier ambiente.</p>
-      <div style="margin-top:60px;">
-        <a href="#productos" class="btn-hero">Explorar Colección</a>
-        <a href="https://wa.me/573189411374" target="_blank" class="btn-hero whatsapp" style="margin-left:30px;">WhatsApp</a>
+      <h1>Eleva tu espacio</h1>
+      <p>Piezas cuidadosamente seleccionadas para transformar tu hogar en un lugar lleno de estilo y calidez.</p>
+      <div style="margin-top:70px;">
+        <a href="#productos" class="btn-primary">Ver Colección</a>
+        <a href="https://wa.me/573189411374" class="btn-primary btn-whatsapp" target="_blank">WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <!-- Resto de las secciones se mantienen iguales, solo ajusta el estilo de las tarjetas si lo deseas -->
+  <!-- Aquí puedes agregar las otras secciones (productos, envíos, etc.) con el mismo estilo -->
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
       particles: {
-        number: { value: 40, density: { enable: true, value_area: 800 } },
-        color: { value: ["#D4AF37", "#E8D5A3", "#ffffff"] },
+        number: { value: 35 },
+        color: { value: ["#c9a96e", "#e8d5a3", "#ffffff"] },
         shape: { type: "circle" },
-        opacity: { value: 0.4, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
-        size: { value: 3.5, random: true },
+        opacity: { value: 0.35, random: true, anim: { enable: true, speed: 0.8 } },
+        size: { value: 3, random: true },
         line_linked: { enable: false },
         move: {
           enable: true,
-          speed: 0.8,
+          speed: 0.7,
           direction: "none",
           random: true,
           straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: { enable: false }
+          out_mode: "out"
         }
       },
       interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "bubble" },
-          onclick: { enable: true, mode: "push" },
-          resize: true
-        },
-        modes: {
-          bubble: { distance: 200, size: 6, duration: 2, opacity: 0.8, speed: 3 },
-          push: { particles_nb: 4 }
-        }
+        events: { onhover: { enable: true, mode: "bubble" } },
+        modes: { bubble: { distance: 180, size: 5, duration: 2, opacity: 0.7 } }
       },
       retina_detect: true
     });
